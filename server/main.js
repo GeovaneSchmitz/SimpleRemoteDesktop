@@ -2,9 +2,12 @@ var capture = require('./capture');
 var socket = require('./socket');
 var discovery = require("./DiscoveryService.js");
 
+if(process.argv[2] != null) {
+    socket.setPort((process.argv[2]));
+}
+
 socket.registerMessageHandler(onNewMessage);
 socket.registerdisconnectHander(capture.free);
-
 function onNewMessage(message) {
 
     switch (message.type) {
