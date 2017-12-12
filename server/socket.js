@@ -14,6 +14,10 @@ module.exports.getPort = function() {
 	return port;
 }
 
+module.exports.setPort = function(pt) {
+	port = pt;
+}
+
 module.exports.registerMessageHandler = function(mh) {
 	onNewMessageHandler = mh;
 }
